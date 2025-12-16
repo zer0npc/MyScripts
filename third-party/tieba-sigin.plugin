@@ -12,7 +12,7 @@ cronTime = input,"40 8 * * *",tag=自定义签到时间,desc=Cron 表达式，�
 
 [Script]
 # 获取 Cookie 脚本（通过开关控制是否启用，默认开启）
-http-request ^https?:\/\/tieba\.baidu\.com\/?.? script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/tieba/tieba.cookie.js, timeout=60, tag=贴吧 Cookie 获取, enable={cookieSwitch}
+http-request ^https?:\/\/tieba\.baidu\.com(\/.*)? script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/tieba/tieba.cookie.js, timeout=60, tag=贴吧 Cookie 获取, enable={cookieSwitch}
 
 # 每日签到脚本（使用自定义 cron 表达式）
 cron {cronTime} script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/tieba/tieba.js, timeout=60, tag=贴吧每日签到, img-url=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Tieba.png

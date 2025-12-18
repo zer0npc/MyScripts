@@ -4,8 +4,8 @@
 // @author        Takagivegeta
 // ==/Scriptable===
 
-const USERNAME = "2946590137@qq.com";
-const PASSWORD = "2946590137a";
+const USERNAME = "";
+const PASSWORD = "";
 
 const BASE_URL = "https://yc.yuchengyouxi.com";
 const LOGIN_PAGE_URL = `${BASE_URL}/login`;

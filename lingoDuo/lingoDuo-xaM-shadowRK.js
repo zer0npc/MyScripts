@@ -2,12 +2,9 @@ let body = $response.body;
 if (body) {
     try {
         let obj = JSON.parse(body);
-        // 校验数据结构是否存在
-        if (obj.responses && obj.responses.length > 0) {
+        if (obj.responses && obj.responses.length >= 2) {
             let userdata = JSON.parse(obj.responses[0].body);
             const timestamp = Math.floor(Date.now() / 1000);
-
-            // 1. 注入订阅信息
             if (!userdata.shopItems) userdata.shopItems = [];
             userdata.shopItems.push({
                 "id": "gold_subscription",
@@ -34,13 +31,8 @@ if (body) {
             props.forEach(p => userdata.trackingProperties[p] = true);
             obj.responses[0].body = JSON.stringify(userdata);
             $done({ body: JSON.stringify(obj) });
-        } else {
-            $done({});
-        }
+        } else $done({});
     } catch (e) {
-        console.log("Duolingo Script Error: " + e);
         $done({});
     }
-} else {
-    $done({});
-}
+} else $done({});

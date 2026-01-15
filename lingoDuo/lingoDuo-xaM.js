@@ -25,8 +25,8 @@ try {
         userdata.trackingProperties.has_item_gold_subscription = true;
         userdata.trackingProperties.has_item_max_subscription = true;
         obj.responses[0].body = JSON.stringify(userdata);
-        $done({ body: JSON.stringify(obj) })
     }
+    $done({ body: JSON.stringify(obj) })
 } catch (e) {
     $done({});
 }

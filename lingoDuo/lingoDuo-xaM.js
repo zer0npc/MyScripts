@@ -1,3 +1,4 @@
+console.log('开始修改')
 try {
     let obj = JSON.parse($response.body);
     if (obj.responses && obj.responses.length >= 2 && !('etag' in obj.responses[0].headers)) {
@@ -25,8 +26,10 @@ try {
         userdata.trackingProperties.has_item_gold_subscription = true;
         userdata.trackingProperties.has_item_max_subscription = true;
         obj.responses[0].body = JSON.stringify(userdata);
+        console.log('修改成功')
     }
     $done({ body: JSON.stringify(obj) })
 } catch (e) {
+    console.log('修改失败')
     $done({});
 }

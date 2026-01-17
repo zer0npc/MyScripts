@@ -7,3 +7,4 @@ duolingo_max = type=http-response,pattern=^https?:\/\/(ios-api-[a-z0-9-]+|api\d+
 
 [MITM]
 hostname = %APPEND% ios-api-*.duolingo.com, ios-api-*.duolingo.cn, api*.duolingo.com, api*.duolingo.cn
+

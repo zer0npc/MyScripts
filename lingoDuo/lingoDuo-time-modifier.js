@@ -1,6 +1,6 @@
 try {
     let obj = JSON.parse($response.body);
-    let s = parseInt($argument.minutes) * 60;
+    let s = parseInt($argument.timer_mins) * 60;
     if (!isNaN(s) && s > 0 && obj.liveOpscs)
         obj.liveOpscs.forEach(c => {
             if (c.initialTime) c.initialTime = s;

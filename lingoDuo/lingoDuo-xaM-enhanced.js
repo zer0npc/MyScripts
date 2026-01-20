@@ -52,6 +52,7 @@ try {
                     xpBoostMultiplier: xpMultiplier
                 });
         }
+        userdata.timerBoostConfig.hasFreeTimerBoost = true;
         obj.responses[0].body = JSON.stringify(userdata);
     }
     $done({ body: JSON.stringify(obj) });

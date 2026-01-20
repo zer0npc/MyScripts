@@ -1,0 +1,15 @@
+#!name = Duolingo Max 解锁增强版
+#!desc = Duolingo iOS 版解锁 Max 会员，实现无限体力、去除广告、解锁视频通话等功能，支持经验加倍。
+#!author = Takagivegeta
+#!homepage = https://github.com/TAKAGIVEGETA/MyScripts/tree/main/lingoDuo
+#!icon = https://github.com/TAKAGIVEGETA/MyScripts/blob/main/lingoDuo/lingoDuo.png?raw=true
+
+[Argument]
+xp_boost = switch, true, tag = 开启 XP 经验加倍, desc = 开启练习将获得加倍经验
+multiplier = select, "2", "2", "3", tag = 经验倍数, desc = 选择 2 倍或 3 倍加倍效果
+
+[Script]
+http-response ^https?:\/\/(ios-api-[a-z0-9-]+|api\d+)\.duolingo\.c(n|om)\/2023-05-23\/batch script-path=https://raw.githubusercontent.com/TAKAGIVEGETA/MyScripts/main/lingoDuo/lingoDuo-xaM-enhanced.js, requires-body=true, timeout=120, tag=Max 解锁, argument=[{xp_boost}, {multiplier}]
+
+[MITM]
+hostname = ios-api-*.duolingo.com, ios-api-*.duolingo.cn, api*.duolingo.com, api*.duolingo.cn

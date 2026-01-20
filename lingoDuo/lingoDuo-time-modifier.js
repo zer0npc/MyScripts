@@ -1,11 +1,11 @@
 try {
     let obj = JSON.parse($response.body);
-    let s = parseInt($argument.timer_mins) * 60;
-    if (!isNaN(s) && s > 0 && obj.liveOpscs)
-        obj.liveOpscs.forEach(c => {
-            if (c.initialTime) c.initialTime = s;
-            if (c.initialLevelTimes) c.initialLevelTimes = c.initialLevelTimes.map(() => s);
-            if (c.initialSessionTimes) c.initialSessionTimes = c.initialSessionTimes.map(() => s);
+    let seconds = parseInt($argument.timer_mins) * 60;
+    if (!isNaN(seconds) && seconds > 0 && obj.liveOpsChallenges)
+        obj.liveOpsChallenges.forEach(challenge => {
+            if (challenge.initialTime) challenge.initialTime = seconds;
+            if (challenge.initialLevelTimes) challenge.initialLevelTimes = challenge.initialLevelTimes.map(() => seconds);
+            if (challenge.initialSessionTimes) challenge.initialSessionTimes = challenge.initialSessionTimes.map(() => seconds);
         });
     $done({ body: JSON.stringify(obj) });
 } catch (e) {

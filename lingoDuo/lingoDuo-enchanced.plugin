@@ -5,7 +5,7 @@
 #!icon = https://github.com/TAKAGIVEGETA/MyScripts/blob/main/lingoDuo/lingoDuo.png?raw=true
 
 [Argument]
-xp_boost = switch, true, tag = 开启 XP 经验加倍, desc = 开启练习将获得加倍经验
+xp_boost = switch, false, tag = 开启 XP 经验加倍, desc = 开启练习将获得加倍经验
 multiplier = select, "2", "3", tag = 经验倍数, desc = 选择加倍效果
 
 [Script]

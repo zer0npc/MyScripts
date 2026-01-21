@@ -52,8 +52,8 @@ try {
                     xpBoostMultiplier: xpMultiplier
                 });
         }
-        userdata.betaStatus = 'ELIGIBLE';
-        userdata.trackingProperties.beta_enrollment_status = 'ELIGIBLE';
+        // userdata.betaStatus = 'ELIGIBLE';
+        // userdata.trackingProperties.beta_enrollment_status = 'ELIGIBLE';
         obj.responses[0].body = JSON.stringify(userdata);
     }
     $done({ body: JSON.stringify(obj) });

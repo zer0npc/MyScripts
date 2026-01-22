@@ -4,7 +4,7 @@ try {
     console.log('duolingo log1 start')
     console.log(obj.responses.length)
     console.log('duolingo log1 end')
-    if (!obj.responses || obj.responses.length < 2 || (obj.responses[0].headers && 'etag' in obj.responses[0].headers)); // skip
+    if (!obj.responses || (obj.responses[0].headers && 'etag' in obj.responses[0].headers)); // skip
     else {
         const now = Math.floor(Date.now() / 1000);
         const userdata = JSON.parse(obj.responses[0].body);

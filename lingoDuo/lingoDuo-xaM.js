@@ -1,4 +1,5 @@
 try {
+    console.log('duolingo log0 ----', $response.body)
     let obj = JSON.parse($response.body);
     console.log('duolingo log1 ----', obj)
     console.log('duolingo log2 ----', obj.responses.length)

@@ -5,7 +5,7 @@ try {
     console.log(obj.responses.length)
     console.log(obj.responses[0].headers.etag)
     console.log('duolingo log1 end')
-    if (!obj.responses || (obj.responses[0].headers && 'etag' in obj.responses[0].headers)); // skip
+    if (!obj.responses); // skip
     else {
         const now = Math.floor(Date.now() / 1000);
         const userdata = JSON.parse(obj.responses[0].body);

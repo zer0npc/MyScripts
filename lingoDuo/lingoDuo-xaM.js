@@ -1,9 +1,9 @@
 try {
     console.log('duolingo log0 ----', $response.body)
     let obj = JSON.parse($response.body);
-    console.log('duolingo log1 ----', obj)
-    console.log('duolingo log2 ----qqq', typeof obj.responses.length, '-------qqq end')
-    console.log('duolingo log3')
+    console.log('duolingo log1 start')
+    console.log(typeof obj.responses.length)
+    console.log('duolingo log1 end')
     if (!obj.responses || obj.responses.length < 2 || (obj.responses[0].headers && 'etag' in obj.responses[0].headers)); // skip
     else {
         const now = Math.floor(Date.now() / 1000);

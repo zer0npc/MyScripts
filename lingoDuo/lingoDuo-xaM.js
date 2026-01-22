@@ -5,8 +5,8 @@ try {
     console.log(obj.responses.length)
     console.log(obj.responses[0].headers.etag)
     console.log('duolingo log1 end')
-    if (!obj.responses); // skip
-    else {
+   // if (!obj.responses); // skip
+    //else {
         const now = Math.floor(Date.now() / 1000);
         const userdata = JSON.parse(obj.responses[0].body);
         if (!userdata.shopItems) userdata.shopItems = [];
@@ -31,7 +31,7 @@ try {
         userdata.trackingProperties.has_item_gold_subscription = true;
         userdata.trackingProperties.has_item_max_subscription = true;
         obj.responses[0].body = JSON.stringify(userdata);
-    }
+    //}
     $done({ body: JSON.stringify(obj) });
 } catch (e) {
     console.log('duolingo log err', e)

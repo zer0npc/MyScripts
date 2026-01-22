@@ -3,7 +3,7 @@ try {
     let obj = JSON.parse($response.body);
     console.log('duolingo log1 start')
     console.log(obj.responses.length)
-    console.log(obj.responses[0].headers)
+    console.log(obj.responses[0].headers.etag)
     console.log('duolingo log1 end')
     if (!obj.responses || (obj.responses[0].headers && 'etag' in obj.responses[0].headers)); // skip
     else {

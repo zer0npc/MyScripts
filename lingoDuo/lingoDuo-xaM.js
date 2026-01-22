@@ -1,6 +1,7 @@
 try {
     let obj = JSON.parse($response.body);
-    console.log('duolingo log', obj.responses.length)
+    console.log('duolingo log1 ----', obj)
+    console.log('duolingo log2 ----', obj.responses.length)
     if (!obj.responses || obj.responses.length < 2 || (obj.responses[0].headers && 'etag' in obj.responses[0].headers)); // skip
     else {
         const now = Math.floor(Date.now() / 1000);
@@ -30,6 +31,6 @@ try {
     }
     $done({ body: JSON.stringify(obj) });
 } catch (e) {
-    console.log('duolingo log', e)
+    console.log('duolingo log err', e)
     $done({});
 }
